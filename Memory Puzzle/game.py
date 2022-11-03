@@ -34,10 +34,13 @@ for img in range(1,21):
         image = pygame.transform.scale(image, (TILESIZE,TILESIZE))
         img_list.append(image)
 
-bg = pygame.image.load('Assets/bg.jpg')
+bgs = pygame.image.load('Assets/background/bg.jpg')
+bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
 game_won = pygame.image.load('Assets/won.png')
 rightbar = pygame.image.load('Assets/image.jpg')
 rightbar = pygame.transform.scale(rightbar, (370, HEIGHT - 47))
+nextlevelimg = pygame.image.load('Assets/nextlevel.png')
+nextlevel = pygame.transform.scale(nextlevelimg, (550, 220))
 
 ### Loading Sounds ************************************************************
 pygame.mixer.music.load('Sounds/Puzzle-Game-3_Looping.mp3')
@@ -56,6 +59,9 @@ info_btn = Button(info_img, (40,40), 755, 330)
 
 close_img = pygame.image.load('Assets/close.png')
 close_btn = Button(close_img, (40,40), 755, 380)
+
+nextlevel_img = pygame.image.load('Assets/next.png')
+next_btn = Button(nextlevel_img, (80,80), 455, 430)
 
 ### LOADING FRUITS INFORMATION ************************************************
 with open('Info/info.json') as f:
@@ -82,11 +88,12 @@ isLoading = True
 animation_on = True
 animation_count = 0
 prev_count = 0
-
+level = 0
 gameWon = False
 numClicks = 0
 numSec = 0
-
+prevCards = numCards
+levelreqscores = [2,3,4,5]
 running = True
 
 start_ticks=pygame.time.get_ticks()
@@ -113,6 +120,7 @@ while running:
                 numClicks = 0
                 numSec = 0
                 numCards = 80
+                prevCards = numCards
                 gameWon = False
 
                 start_ticks=pygame.time.get_ticks()
@@ -133,6 +141,8 @@ while running:
         x, y = pygame.mouse.get_pos()
 
         for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                        running = False
                 if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_ESCAPE:
                                 running = False
@@ -144,8 +154,18 @@ while running:
 
         if game_screen:
                 ### Game is on
-                if numCards == 0:
+                if numCards == 46:
                         gameWon = True
+                        level=0
+                if numCards == 76:
+                        gameWon = True
+                        level = 1
+                if numCards == 68:
+                        gameWon = True
+                        level = 2
+                if numCards == 58:
+                        gameWon = True
+                        level = 3
 
                 if isLoading:
                         ### Preview card animation
@@ -205,6 +225,10 @@ while running:
                                         second_click_time = None
                                 else:
                                         clicked = False
+                        win.blit(clicks_font.render("Clicks: " + str(numClicks), True, WHITE), (600, 50))
+                        win.blit(clicks_font.render("Time: " + str(int(numSec)), True, WHITE), (600, 75))
+                        win.blit(clicks_font.render("Matches: " + str(int((prevCards-numCards)/2))+"/"+str(levelreqscores[level]), True, WHITE), (600, 100))
+
 
                         ### Displaying cards
                         for r in range(ROWS):
@@ -221,7 +245,7 @@ while running:
                                                                 if clicked:
                                                                         card_click.play()
                                                                         numClicks += 1
-                                                                        NumSec=(pygame.time.get_ticks()-start_ticks)/1000
+                                                                        numSec=(pygame.time.get_ticks()-start_ticks)/1000
                                                                         card.visible = True
                                                                         card.animate = True
                                                                         card.slide_left = True
@@ -251,8 +275,87 @@ while running:
                                                         else:
                                                                 speed = 8
                                                         card.on_click(win, speed)
+                elif level ==1:
+                        ### display next level
+                        win.blit(nextlevel, (20,100))
+                        # win.blit("Level 2", (WIDTH/2, HEIGHT/2))
+                        
+                        #display button
+                        if next_btn.draw(win):
+                                game_screen = True
+                                show_text = False
+                                first_card = None
+                                second_card = None
+                                first_click_time = None
+                                second_click_time = None
+
+                                board.randomize_images()
+                                
+                                isLoading = True
+                                animation_on = True
+                                animation_count = 0
+                                bgs =pygame.image.load('Assets/background/bg2.jpg')
+                                bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
+                                # bg=pygame.transform.scale(bg,SCREEN_SIZE)
+                                numCards = 74
+                                prevCards = numCards
+                                gameWon = False
+
+                                start_ticks=pygame.time.get_ticks()
+                elif level ==2:
+                        ### display next level
+                        win.blit(nextlevel, (20,100))
+                        # win.blit("Level 2", (WIDTH/2, HEIGHT/2))
+                        #display button
+                        if next_btn.draw(win):
+                                game_screen = True
+                                show_text = False
+                                first_card = None
+                                second_card = None
+                                first_click_time = None
+                                second_click_time = None
+
+                                board.randomize_images()
+
+                                isLoading = True
+                                animation_on = True
+                                animation_count = 0
+                                numCards = 66
+                                bgs =pygame.image.load('Assets/background/bg3.jpg')
+                                bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
+                                gameWon = False
+                                prevCards = numCards
+
+                                start_ticks=pygame.time.get_ticks()
+
+                elif level ==3:
+                        ### display next level
+                        win.blit(nextlevel, (20,100))
+                        # win.blit("Level 2", (WIDTH/2, HEIGHT/2))
+
+                        #display button
+                        if next_btn.draw(win):
+                                game_screen = True
+                                show_text = False
+                                first_card = None
+                                second_card = None
+                                first_click_time = None
+                                second_click_time = None
+
+                                board.randomize_images()
+
+                                isLoading = True
+                                animation_on = True
+                                animation_count = 0
+                                bgs =pygame.image.load('Assets/background/bg4.jfif')
+                                bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
+                                numCards = 56
+                                prevCards = numCards
+                                gameWon = False
+
+
                 else:
-                        win.blit(game_won, (50,100))
+                        win.blit(game_won, (0,100))
                         image = clicks_font.render(f'Number of Clicks : {numClicks}', 0, (255, 255, 255))
                         image1 = clicks_font.render(f'Total time in seconds: {numSec}',0,(255, 255, 255))
                         win.blit(image, (150, 350))
