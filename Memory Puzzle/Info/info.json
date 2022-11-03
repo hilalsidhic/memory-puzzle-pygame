@@ -1,0 +1,82 @@
+{
+	"1" : {
+		"Name" : "Horse",
+		"Info" : "The horse is a domesticated, one-toed, hoofed mammal. It belongs to the taxonomic family Equidae and is one of two extant subspecies of Equus ferus. The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large, single-toed animal of today."
+		},
+	"2" : {
+		"Name" : "Dog",
+		"Info" : "The dog is a domesticated descendant of the wolf. Also called the domestic dog, it is derived from an ancient, extinct wolf, and the modern wolf is the dog's nearest living relative. The dog was the first species to be domesticated, by hunter-gatherers over 15,000 years ago, before the development of agriculture."
+		},
+	"3" : {
+		"Name" : "Elephant",
+		"Info" : "Elephantidae is a family of large, herbivorous proboscidean mammals collectively called elephants and mammoths. These are terrestrial large mammals with a snout modified into a trunk and teeth modified into tusks. Most genera and species in the family are extinct. Only two genera, Loxodonta and Elephas, are living. "
+		},
+	"4" : {
+		"Name" : "Cat",
+		"Info" : "The cat is a domestic species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is commonly referred to as the domestic cat or house cat to distinguish it from the wild members of the family."
+		},
+	"5" : {
+		"Name" : "Snake",
+		"Info" : "Snakes are elongated, limbless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered in overlapping scales"
+		},
+	"6" : {
+		"Name" : "Crab",
+		"Info" : "Crabs are decapod crustaceans of the infraorder Brachyura, which typically have a very short projecting 'tail', usually hidden entirely under the thorax. They live in all the world's oceans, in freshwater, and on land, are generally covered with a thick exoskeleton, and have a single pair of pincers."
+		},
+	"7" : {
+		"Name" : "Hen",
+		"Info" : "The chicken is a domesticated junglefowl species, with attributes of wild species such as the grey and the Ceylon junglefowl that are originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and a younger male may be called a cockerel. A male that has been castrated is a capon.."
+		},
+	"8" : {
+		"Name" : "Turtle",
+		"Info" : "Turtles are an order of reptiles known as Testudines, characterized by a shell developed mainly from their ribs. Modern turtles are divided into two major groups, the Pleurodira and Cryptodira, which differ in the way the head retracts."
+		},
+	"9" : {
+		"Name" : "Kangaroo",
+		"Info" :"Kangaroos are four marsupials from the family Macropodidae. In common use the term is used to describe the largest species from this family, the red kangaroo, as well as the antilopine kangaroo, eastern grey kangaroo, and western grey kangaroo. Kangaroos are indigenous to Australia and New Guinea.."
+		},
+	"10" : {
+		"Name" : "Gorila",
+		"Info" : "Gorillas are herbivorous, predominantly ground-dwelling great apes that inhabit the tropical forests of equatorial Africa. The genus Gorilla is divided into two species: the eastern gorilla and the western gorilla, and either four or five subspecies."
+		},
+	"11" : {
+		"Name" : "Earthworm",
+		"Info" : "An earthworm is a terrestrial invertebrate that belongs to the phylum Annelida. They exhibit a tube-within-a-tube body plan; they are externally segmented with corresponding internal segmentation; and they usually have setae on all segments. They occur worldwide where soil, water, and temperature allow."
+		},
+	"12" : {
+		"Name" : "Frog",
+		"Info" : "A frog is any member of a diverse and largely carnivorous group of short-bodied, tailless amphibians composing the order Anura."
+		},
+	"13" : {
+		"Name" : "Pig",
+		"Info" : "The pig, often called swine, hog, or domestic pig when distinguishing from other members of the genus Sus, is an omnivorous, domesticated, even-toed, hoofed mammal. It is variously considered a subspecies of Sus scrofa or a distinct species."
+		},
+	"14" : {
+		"Name" : "Crocodile",
+		"Info" : "Crocodiles or true crocodiles are large semiaquatic reptiles that live throughout the tropics in Africa, Asia, the Americas and Australia."
+		},
+	"15" : {
+		"Name" : "Monkey",
+		"Info" : "Monkey is a common name that may refer to most mammals of the infraorder Simiiformes, also known as the simians."
+		},
+	"16" : {
+		"Name" : "Tiger",
+		"Info" : "The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside. An apex predator, it primarily preys on ungulates, such as deer and wild boar."
+		},
+	"17" : {
+		"Name" : "Camel",
+		"Info" : "A camel is an even-toed ungulate in the genus Camelus that bears distinctive fatty deposits known as 'humps' on its back. Camels have long been domesticated and, as livestock, they provide food and textiles."
+		},
+	"18" : {
+		"Name" : "Panda",
+		"Info" : "The giant panda, also known as the panda bear, is a bear species endemic to China. It is characterised by its bold black-and-white coat and rotund body. The name 'giant panda' is sometimes used to distinguish it from the red panda, a neighboring musteloid."
+		},
+	"19" : {
+		"Name" : "Lion",
+		"Info" : "The lion is a large cat of the genus Panthera native to Africa and India. It has a muscular, broad-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane."
+		},
+	"20" : {
+		"Name" : "Zebra",
+		"Info" : "Zebras are African equines with distinctive black-and-white striped coats. There are three living species: the Grévy's zebra, plains zebra, and the mountain zebra. Zebras share the genus Equus with horses and asses, the three groups being the only living members of the family Equidae."
+		}
+}
