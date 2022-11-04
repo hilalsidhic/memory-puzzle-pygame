@@ -154,16 +154,16 @@ while running:
 
         if game_screen:
                 ### Game is on
-                if numCards == 46:
+                if numCards == 80-levelreqscores[3]*2-levelreqscores[2]*2-levelreqscores[1]*2-levelreqscores[0]*2-6:
                         gameWon = True
                         level=0
-                if numCards == 76:
+                if numCards == 80-levelreqscores[0]*2:
                         gameWon = True
                         level = 1
-                if numCards == 68:
+                if numCards == 80-levelreqscores[0]*2-levelreqscores[1]*2-2:
                         gameWon = True
                         level = 2
-                if numCards == 58:
+                if numCards == 80-levelreqscores[2]*2-levelreqscores[1]*2-levelreqscores[0]*2-4:
                         gameWon = True
                         level = 3
 
@@ -297,7 +297,7 @@ while running:
                                 bgs =pygame.image.load('Assets/background/bg2.jpg')
                                 bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
                                 # bg=pygame.transform.scale(bg,SCREEN_SIZE)
-                                numCards = 74
+                                numCards = 80-levelreqscores[0]*2-2
                                 prevCards = numCards
                                 gameWon = False
 
@@ -320,7 +320,7 @@ while running:
                                 isLoading = True
                                 animation_on = True
                                 animation_count = 0
-                                numCards = 66
+                                numCards = 80-levelreqscores[0]*2-levelreqscores[1]*2-4
                                 bgs =pygame.image.load('Assets/background/bg3.jpg')
                                 bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
                                 gameWon = False
@@ -349,7 +349,7 @@ while running:
                                 animation_count = 0
                                 bgs =pygame.image.load('Assets/background/bg4.jfif')
                                 bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
-                                numCards = 56
+                                numCards = 80-levelreqscores[2]*2-levelreqscores[1]*2-levelreqscores[0]*2-6
                                 prevCards = numCards
                                 gameWon = False
 
