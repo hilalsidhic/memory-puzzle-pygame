@@ -170,7 +170,7 @@ while running:
                         ### Preview card animation
                         clicked = False
 
-                        if animation_count < 20:
+                        if animation_count < 80:
                                 for index, pos in enumerate(animated_boxes):
                                         card = board.board[pos[0]][pos[1]]
                                         if card.cover_x >= TILESIZE:
@@ -226,6 +226,7 @@ while running:
                                         clicked = False
                         win.blit(clicks_font.render("Clicks: " + str(numClicks), True, WHITE), (600, 50))
                         win.blit(clicks_font.render("Time: " + str(int(numSec)), True, WHITE), (600, 75))
+                        win.blit(clicks_font.render("Timer: " + str(int(seconds)), True, WHITE), (600, 125))
                         win.blit(clicks_font.render("Matches: " + str(int((prevCards-numCards)/2))+"/"+str(levelreqscores[level]), True, WHITE), (600, 100))
 
 
