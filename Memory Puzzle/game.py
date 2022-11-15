@@ -33,7 +33,6 @@ for img in range(1,21):
         image = pygame.image.load(f"Assets/icons/{img}.jpeg")
         image = pygame.transform.scale(image, (TILESIZE,TILESIZE))
         img_list.append(image)
-
 bgs = pygame.image.load('Assets/background/bg.jpg')
 bg=pygame.transform.scale(bgs, (WIDTH+500, HEIGHT+300))
 game_won = pygame.image.load('Assets/won.png')

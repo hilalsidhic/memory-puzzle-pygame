@@ -21,7 +21,11 @@ class Board:
 		for r in range(ROWS):
 			for c in range(COLS):
 				index = r * COLS + c
-				value = self.extended_imglist[index]
+				# print("index = ",len(self.extended_imglist))
+				if(index+1>len(self.extended_imglist)):
+					value = self.extended_imglist[random.randint(0, len(self.image_list)-1)]
+				else:
+					value = self.extended_imglist[index]
 				image = self.image_list[value-1]
 				x = c*TILESIZE + c * 10 + 20
 				y = r*TILESIZE + r * 10 + 20
@@ -36,7 +40,11 @@ class Board:
 		for r in range(2):
 			for c in range(COLS):
 				value = r * COLS + c + 1
-				image = self.image_list[value-1]
+				# print("value = ",len(self.image_list))
+				if(value>len(self.image_list)):
+					image = self.image_list[random.randint(0, len(self.image_list)-1)]
+				else:
+					image = self.image_list[value-1]
 				x = c*TILESIZE + c * 10 + 20
 				y = r*TILESIZE + r * 10 + 20
 				card = InfoCard(value, (r,c), image, (x, y))
