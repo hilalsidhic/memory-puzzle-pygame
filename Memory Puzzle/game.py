@@ -187,7 +187,7 @@ while running:
                                                 card = board.board[pos[0]][pos[1]]
                                                 card.visible = False
                                                 card.animate = False
-                                        animated_boxes = [(randint(0,7), randint(0,9)) for i in range(20)]
+                                        animated_boxes = [(randint(0,7), randint(0,9)) for i in range(len(img_list))]
                                         animation_count += 1
                         else:
                                 isLoading = False
@@ -271,9 +271,9 @@ while running:
                                                                 pygame.draw.rect(win, RED, (xcord, ycord,TILESIZE, TILESIZE), 2)
                                                 else:
                                                         if isLoading:
-                                                                speed = 5
+                                                                speed = 2
                                                         else:
-                                                                speed = 8
+                                                                speed = 2
                                                         card.on_click(win, speed)
                 elif level ==1:
                         ### display next level
