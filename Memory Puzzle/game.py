@@ -26,7 +26,9 @@ BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 RED = (255, 25, 25)
 WHITE = (255, 255, 255)
-
+secondsnew = 0
+firstclickdone = False
+secondsnewdiff = 0
 ### LOADING IMAGES ************************************************************
 img_list = []
 for img in range(1,21):
@@ -121,6 +123,8 @@ while running:
                 numCards = 80
                 prevCards = numCards
                 gameWon = False
+                firstclickdone = False
+                secondsnew = 0
 
                 start_ticks=pygame.time.get_ticks()
 
@@ -132,6 +136,10 @@ while running:
                 running = False
 
         seconds=(pygame.time.get_ticks()-start_ticks)/1000
+        if firstclickdone:
+                secondsnew = (pygame.time.get_ticks()-start_ticks)/1000-secondsnewdiff
+        else:
+                secondsnewdiff = (pygame.time.get_ticks()-start_ticks)/1000
         if seconds>500:
                 board.randomize_images()
 
@@ -226,7 +234,7 @@ while running:
                                         clicked = False
                         win.blit(clicks_font.render("Clicks: " + str(numClicks), True, WHITE), (600, 50))
                         win.blit(clicks_font.render("Time: " + str(int(numSec)), True, WHITE), (600, 75))
-                        win.blit(clicks_font.render("Timer: " + str(int(seconds)), True, WHITE), (600, 125))
+                        win.blit(clicks_font.render("Timer: " + str(int(secondsnew)), True, WHITE), (600, 125))
                         win.blit(clicks_font.render("Matches: " + str(int((prevCards-numCards)/2))+"/"+str(levelreqscores[level]), True, WHITE), (600, 100))
 
 
@@ -246,6 +254,7 @@ while running:
                                                                         card_click.play()
                                                                         numClicks += 1
                                                                         numSec=(pygame.time.get_ticks()-start_ticks)/1000
+                                                                        firstclickdone = True
                                                                         card.visible = True
                                                                         card.animate = True
                                                                         card.slide_left = True
